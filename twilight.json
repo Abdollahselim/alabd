@@ -3,11 +3,8 @@
         "ar": "العبد",
         "en": "AL-ABD"
     },
-    "title": "العبد - ثيم فخم متعدد الاستخدامات",
     "repository": "https://github.com/Abdollahselim/al-abd",
     "author_email": "selimdevs40@gmail.com",
-    "author": "Abdullah Selim",
-    "version": "1.0.0",
     "features": [
         "mega-menu",
         "fonts",
@@ -28,61 +25,6 @@
         "filters"
     ],
     "settings": [
-        {
-			"type": "header",
-			"content": "الألوان والخطوط - إعدادات أساسية (العيد 2025)"
-		},
-		{
-			"type": "color",
-			"id": "primary_color",
-			"label": "اللون الأساسي (للأزرار، الروابط، العناوين)",
-			"default": "#2563eb"
-		},
-		{
-			"type": "color",
-			"id": "secondary_color",
-			"label": "اللون الثانوي (للهوفر، العناصر الثانوية)",
-			"default": "#1d4ed8"
-		},
-		{
-			"type": "color",
-			"id": "background_color",
-			"label": "لون خلفية الموقع",
-			"default": "#ffffff"
-		},
-		{
-			"type": "color",
-			"id": "text_color",
-			"label": "لون النصوص الأساسية",
-			"default": "#1f2937"
-		},
-		{
-			"type": "color",
-			"id": "heading_color",
-			"label": "لون العناوين (h1, h2, h3...)",
-			"default": "#111827"
-		},
-		{
-			"type": "font",
-			"id": "heading_font",
-			"label": "خط العناوين",
-			"default": "Cairo"
-		},
-		{
-			"type": "font",
-			"id": "body_font",
-			"label": "خط النصوص العادية",
-			"default": "Tajawal"
-		},
-		{
-			"type": "paragraph",
-			"content": "التغييرات ستظهر فورًا في كل المتاجر والمتاجر التي تسمح بذلك"
-		},
-		{
-			"type": "static",
-			"format": "line"
-		},
-        
         {
             "id": "squar_photo_bg_image_size",
             "type": "items",
