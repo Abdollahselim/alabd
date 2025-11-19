@@ -29,101 +29,59 @@
     ],
     "settings": [
         {
-            "type": "header",
-            "content": "General Colors & Typography - Full Control Panel (Al-Abd 2025)"
-        },
-        {
-            "type": "color",
-            "id": "primary_color",
-            "label": "Primary Color (Buttons, Links, Accents)",
-            "default": "#2563eb"
-        },
-        {
-            "type": "color",
-            "id": "primary_hover_color",
-            "label": "Primary Hover Color (Buttons on hover)",
-            "default": "#1d4ed8"
-        },
-        {
-            "type": "color",
-            "id": "background_color",
-            "label": "Main Background Color (Whole Store)",
-            "default": "#ffffff"
-        },
-        {
-            "type": "color",
-            "id": "text_color",
-            "label": "Body Text Color",
-            "default": "#1f2937"
-        },
-        {
-            "type": "color",
-            "id": "heading_color",
-            "label": "Headings Color (h1-h6)",
-            "default": "#111827"
-        },
-        {
-            "type": "color",
-            "id": "border_color",
-            "label": "Borders & Dividers Color",
-            "default": "#e5e7eb"
-        },
-
-        {
-            "type": "font",
-            "id": "heading_font",
-            "label": "Heading Font",
-            "default": "Cairo"
-        },
-        {
-            "type": "font",
-            "id": "body_font",
-            "label": "Body Font",
-            "default": "Tajawal"
-        },
-        {
-            "type": "range",
-            "id": "base_font_size",
-            "label": "Base Font Size (px)",
-            "min": 14,
-            "max": 22,
-            "step": 1,
-            "default": 16
-        },
-
-        {
-            "type": "header",
-            "content": "Buttons & Cards Styling"
-        },
-        {
-            "type": "select",
-            "id": "button_style",
-            "label": "Button Style",
-            "options": [
-            { "value": "rounded", "label": "Rounded" },
-            { "value": "pill", "label": "Pill (Fully Rounded)" },
-            { "value": "sharp", "label": "Sharp Corners" }
-            ],
-            "default": "rounded"
-        },
-        {
-            "type": "range",
-            "id": "button_padding",
-            "label": "Button Padding (px)",
-            "min": 8,
-            "max": 24,
-            "step": 2,
-            "default": 14
-        },
-
-        {
-            "type": "header",
-            "content": "Original Raed Settings (Keep for compatibility)"
-        },
-        {
-            "type": "static",
-            "format": "line"
-        },
+			"type": "header",
+			"content": "الألوان والخطوط - إعدادات أساسية (العيد 2025)"
+		},
+		{
+			"type": "color",
+			"id": "primary_color",
+			"label": "اللون الأساسي (للأزرار، الروابط، العناوين)",
+			"default": "#2563eb"
+		},
+		{
+			"type": "color",
+			"id": "secondary_color",
+			"label": "اللون الثانوي (للهوفر، العناصر الثانوية)",
+			"default": "#1d4ed8"
+		},
+		{
+			"type": "color",
+			"id": "background_color",
+			"label": "لون خلفية الموقع",
+			"default": "#ffffff"
+		},
+		{
+			"type": "color",
+			"id": "text_color",
+			"label": "لون النصوص الأساسية",
+			"default": "#1f2937"
+		},
+		{
+			"type": "color",
+			"id": "heading_color",
+			"label": "لون العناوين (h1, h2, h3...)",
+			"default": "#111827"
+		},
+		{
+			"type": "font",
+			"id": "heading_font",
+			"label": "خط العناوين",
+			"default": "Cairo"
+		},
+		{
+			"type": "font",
+			"id": "body_font",
+			"label": "خط النصوص العادية",
+			"default": "Tajawal"
+		},
+		{
+			"type": "paragraph",
+			"content": "التغييرات ستظهر فورًا في كل المتاجر والمتاجر التي تسمح بذلك"
+		},
+		{
+			"type": "static",
+			"format": "line"
+		},
         
         {
             "id": "squar_photo_bg_image_size",
@@ -316,38 +274,7 @@
             "selected": false
         }
     ],
-      "presets": [
-    {
-      "name": "العبد - الإصدار الفخم 2025",
-      "category": "متجر كامل",
-      "settings": {
-        "primary_color": "#2563eb",
-        "primary_hover_color": "#1d4ed8",
-        "background_color": "#ffffff",
-        "text_color": "#1f2937",
-        "heading_color": "#111827",
-        "heading_font": "Cairo",
-        "body_font": "Tajawal",
-        "base_font_size": 16,
-        "button_style": "rounded"
-      }
-    },
-    {
-      "name": "العبد - النسخة الداكنة الفخمة",
-      "category": "متجر كامل",
-      "settings": {
-        "primary_color": "#c9a44f",
-        "primary_hover_color": "#d4af37",
-        "background_color": "#000000",
-        "text_color": "#ffffff",
-        "heading_color": "#c9a44f",
-        "heading_font": "Cairo",
-        "body_font": "Tajawal",
-        "base_font_size": 17,
-        "button_style": "pill"
-      }
-    }
-  ],
+    
     "components": [
         {
             "key": "186b3f4f-25cf-4d3c-abca-cef7eed6f0ab",
