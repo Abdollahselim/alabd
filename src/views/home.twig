@@ -1,0 +1,7 @@
+{% extends "layouts.master" %}
+
+{% block content %}
+  {% for section in theme.sections %}
+    {% include section.template ignore missing %}
+  {% endfor %}
+{% endblock %}

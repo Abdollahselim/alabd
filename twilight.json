@@ -316,6 +316,38 @@
             "selected": false
         }
     ],
+      "presets": [
+    {
+      "name": "العبد - الإصدار الفخم 2025",
+      "category": "متجر كامل",
+      "settings": {
+        "primary_color": "#2563eb",
+        "primary_hover_color": "#1d4ed8",
+        "background_color": "#ffffff",
+        "text_color": "#1f2937",
+        "heading_color": "#111827",
+        "heading_font": "Cairo",
+        "body_font": "Tajawal",
+        "base_font_size": 16,
+        "button_style": "rounded"
+      }
+    },
+    {
+      "name": "العبد - النسخة الداكنة الفخمة",
+      "category": "متجر كامل",
+      "settings": {
+        "primary_color": "#c9a44f",
+        "primary_hover_color": "#d4af37",
+        "background_color": "#000000",
+        "text_color": "#ffffff",
+        "heading_color": "#c9a44f",
+        "heading_font": "Cairo",
+        "body_font": "Tajawal",
+        "base_font_size": 17,
+        "button_style": "pill"
+      }
+    }
+  ],
     "components": [
         {
             "key": "186b3f4f-25cf-4d3c-abca-cef7eed6f0ab",

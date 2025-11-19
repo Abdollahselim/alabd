@@ -1,0 +1,25 @@
+{% schema %}
+{
+  "name": "بانر البطل الفخم",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "العنوان",
+      "default": "مرحبًا بك في متجر العبد"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "الصورة"
+    },
+  ]
+}
+{% endschema %}
+
+<div class="relative h-screen bg-cover bg-center" style="background-image: url({{ section.settings.image | image_url }})">
+  <div class="absolute inset-0 bg-black opacity-50"></div>
+  <div class="relative h-full flex items-center justify-center text-center text-white">
+    <h1 class="text-6xl font-bold">{{ section.settings.title }}</h1>
+  </div>
+</div>
