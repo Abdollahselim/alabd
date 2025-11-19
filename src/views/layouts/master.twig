@@ -60,74 +60,74 @@
 
     {% include 'pages.partials.loading-screen-assets' %}
 
-    <!-- جلب إعدادات الثيم اللي عملناها في twilight.json -->
-    {% set primary       = theme.settings.get('primary_color')       ?? '#2563eb' %}
-    {% set secondary     = theme.settings.get('secondary_color')     ?? '#1d4ed8' %}
-    {% set bg            = theme.settings.get('background_color')    ?? '#ffffff' %}
-    {% set text          = theme.settings.get('text_color')          ?? '#1f2937' %}
-    {% set heading       = theme.settings.get('heading_color')       ?? '#111827' %}
-    {% set heading_font  = theme.settings.get('heading_font')        ?? 'Cairo' %}
-    {% set body_font     = theme.settings.get('body_font')           ?? 'Tajawal' %}
+    <!-- ==================== Get Theme Settings ==================== -->
+    {% set primary        = theme.settings.get('primary_color')        ?? '#2563eb' %}
+    {% set primary_hover  = theme.settings.get('primary_hover_color')  ?? '#1d4ed8' %}
+    {% set bg             = theme.settings.get('background_color')     ?? '#ffffff' %}
+    {% set text           = theme.settings.get('text_color')           ?? '#1f2937' %}
+    {% set heading        = theme.settings.get('heading_color')        ?? '#111827' %}
+    {% set border         = theme.settings.get('border_color')        ?? '#e5e7eb' %}
+    {% set heading_font   = theme.settings.get('heading_font')         ?? 'Cairo' %}
+    {% set body_font      = theme.settings.get('body_font')            ?? 'Tajawal' %}
+    {% set base_font_size = theme.settings.get('base_font_size')       ?? 16 %}
+    {% set button_style   = theme.settings.get('button_style')         ?? 'rounded' %}
+    {% set button_padding = theme.settings.get('button_padding')       ?? 14 %}
 
-    <!-- CSS Variables + الخطوط + الألوان الأساسية -->
+    <!-- ==================== Dynamic CSS Variables ==================== -->
     <style>
         :root {
-            --primary:       {{ primary }};
-            --secondary:     {{ secondary }};
-            --bg:            {{ bg }};
-            --text:          {{ text }};
-            --heading:       {{ heading }};
-            --heading-font:  "{{ heading_font }}", sans-serif;
-            --body-font:     "{{ body_font }}", sans-serif;
+            --primary:        {{ primary }};
+            --primary-hover:  {{ primary_hover }};
+            --bg:             {{ bg }};
+            --text:           {{ text }};
+            --heading:        {{ heading }};
+            --border:         {{ border }};
+            --heading-font:   "{{ heading_font }}", sans-serif;
+            --body-font:      "{{ body_font }}", sans-serif;
+            --base-font-size: {{ base_font_size }}px;
+            --btn-padding:    {{ button_padding }}px;
+            --btn-radius:     {% if button_style == 'pill' %}999px{% elseif button_style == 'sharp' %}0{% else %}8px{% endif %};
         }
 
-        /* تطبيق الألوان والخطوط على كل المتجر */
-        body {
-            background: var(--bg);
-            color: var(--text);
-            font-family: var(--body-font);
-        }
-        h1,h2,h3,h4,h5,h6,.heading {
-            color: var(--heading);
-            font-family: var(--heading-font);
-        }
-        a, button, .btn, .salla-button {
+        /* Global Styles – Controlled from Theme Settings */
+        body { background: var(--bg); color: var(--text); font-family: var(--body-font); font-size: var(--base-font-size); }
+        h1,h2,h3,h4,h5,h6,.heading { color: var(--heading); font-family: var(--heading-font); }
+        hr, .border, .divider { border-color: var(--border); }
+
+        /* Buttons – Full Control */
+        .btn, button, a.salla-button, [type="submit"] {
             background: var(--primary) !important;
-            color: #ffffff !important;
-            transition: all 0.3s ease;
+            padding: calc(var(--btn-padding) / 2) var(--btn-padding) !important;
+            border-radius: var(--btn-radius) !important;
+            transition: all 0.3s ease !important;
         }
-        a:hover, button:hover, .btn:hover {
-            background: var(--secondary) !important;
+        .btn:hover, button:hover, a.salla-button:hover {
+            background: var(--primary-hover) !important;
         }
-
-        /* لاندينج بيج ولون النصوص في الخلفية الداكنة */
-        .landing-hero { background: var(--primary); }
-        .landing-hero * { color: white !important; }
     </style>
 
-    <!-- تحميل الخطوط من Google Fonts تلقائي -->
+    <!-- Google Fonts – Auto Load -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family={{ heading_font|replace({' ': '+'}) }}:wght@400;500;600;700;800&family={{ body_font|replace({' ': '+'}) }}:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family={{ heading_font|replace({' ': '+'}) }}:wght@400;500;600;700;800;900&family={{ body_font|replace({' ': '+'}) }}:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- ملفات الستايل الأساسية -->
+    <!-- Core Styles -->
     <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
-    <link rel="stylesheet" href="{{ theme.font.path|cdn }}"/>
-    <link rel="stylesheet" href="{{ 'fonts/sallaicons.css'|cdn }}"/>
+    <link rel="stylesheet" href="{{ theme.font.path|cdn }}">
+    <link rel="stylesheet" href="{{ 'fonts/sallaicons.css'|cdn }}">
 
     {{ hook('styles') }}
     {% block styles %}{% endblock %}
 
-    <!-- السكربتات الأساسية -->
-    <script defer data-cfasync="false" src="{{ 'product-card.js'|asset }}"></script>
+    <!-- Core Scripts -->
+    <script defer src="{{ 'product-card.js'|asset }}"></script>
     <script defer src="{{ 'main-menu.js'|asset }}"></script>
 
     {% block head_scripts %}{% endblock %}
 
-    <script data-cfasync="false">
-        window.header_is_sticky = "{{ theme.settings.get('header_is_sticky', 'Default Value') }}";
-        window.imageZoom        = "{{ theme.settings.get('imageZoom') }}";
-        window.can_access_wallet = {{ user.can_access_wallet | json_encode }};
+    <script>
+        window.header_is_sticky = "{{ theme.settings.get('header_is_sticky') }}";
+        window.imageZoom = "{{ theme.settings.get('imageZoom') }}";
     </script>
 
     {{ hook('head:start') }}

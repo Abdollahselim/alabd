@@ -3,7 +3,7 @@
         "ar": "العبد",
         "en": "AL-ABD"
     },
-    "title": "العبد – ثيم فخم متعدد الاستخدامات",
+    "title": "العبد - ثيم فخم متعدد الاستخدامات",
     "repository": "https://github.com/Abdollahselim/al-abd",
     "author_email": "selimdevs40@gmail.com",
     "author": "Abdullah Selim",
@@ -30,58 +30,100 @@
     "settings": [
         {
             "type": "header",
-            "content": "الألوان والخطوط – إعدادات أساسية (العبد 2025)"
-      },
+            "content": "General Colors & Typography - Full Control Panel (Al-Abd 2025)"
+        },
         {
             "type": "color",
             "id": "primary_color",
-            "label": "اللون الأساسي (الأزرار، الروابط، العناوين المهمة)",
+            "label": "Primary Color (Buttons, Links, Accents)",
             "default": "#2563eb"
-      },
+        },
         {
             "type": "color",
-            "id": "secondary_color",
-            "label": "اللون الثانوي (الهوفر، العناصر البارزة)",
+            "id": "primary_hover_color",
+            "label": "Primary Hover Color (Buttons on hover)",
             "default": "#1d4ed8"
-      },
+        },
         {
             "type": "color",
             "id": "background_color",
-            "label": "لون خلفية المتجر",
+            "label": "Main Background Color (Whole Store)",
             "default": "#ffffff"
         },
         {
             "type": "color",
             "id": "text_color",
-            "label": "لون النصوص الأساسية",
+            "label": "Body Text Color",
             "default": "#1f2937"
         },
         {
             "type": "color",
             "id": "heading_color",
-            "label": "لون العناوين (h1, h2, h3...)",
+            "label": "Headings Color (h1-h6)",
             "default": "#111827"
         },
         {
+            "type": "color",
+            "id": "border_color",
+            "label": "Borders & Dividers Color",
+            "default": "#e5e7eb"
+        },
+
+        {
             "type": "font",
             "id": "heading_font",
-            "label": "خط العناوين",
+            "label": "Heading Font",
             "default": "Cairo"
         },
         {
             "type": "font",
             "id": "body_font",
-            "label": "خط النصوص العادية",
+            "label": "Body Font",
             "default": "Tajawal"
         },
         {
-            "type": "paragraph",
-            "content": "التغييرات هتظهر فورًا في كل المتجر واللاندينج بيجز"
+            "type": "range",
+            "id": "base_font_size",
+            "label": "Base Font Size (px)",
+            "min": 14,
+            "max": 22,
+            "step": 1,
+            "default": 16
+        },
+
+        {
+            "type": "header",
+            "content": "Buttons & Cards Styling"
+        },
+        {
+            "type": "select",
+            "id": "button_style",
+            "label": "Button Style",
+            "options": [
+            { "value": "rounded", "label": "Rounded" },
+            { "value": "pill", "label": "Pill (Fully Rounded)" },
+            { "value": "sharp", "label": "Sharp Corners" }
+            ],
+            "default": "rounded"
+        },
+        {
+            "type": "range",
+            "id": "button_padding",
+            "label": "Button Padding (px)",
+            "min": 8,
+            "max": 24,
+            "step": 2,
+            "default": 14
+        },
+
+        {
+            "type": "header",
+            "content": "Original Raed Settings (Keep for compatibility)"
         },
         {
             "type": "static",
             "format": "line"
-        },  
+        },
         
         {
             "id": "squar_photo_bg_image_size",
@@ -327,7 +369,7 @@
                             "format": "image",
                             "required": true,
                             "placeholder": null,
-                            "description": "* المقاس المناسب للصورة هو 900×600 بكسل"
+                            "description": "* المقاس المناسب للصورة هو 900x600 بكسل"
                         },
                         {
                             "type": "string",
@@ -640,7 +682,7 @@
                     "format": "image",
                     "required": true,
                     "placeholder": null,
-                    "description": "* المقاس المناسب للصورة هو 1233×500 بكسل",
+                    "description": "* المقاس المناسب للصورة هو 1233x500 بكسل",
                     "settings": {
                         "height": 580,
                         "width": 1400
@@ -824,7 +866,7 @@
                             "format": "image",
                             "required": true,
                             "placeholder": null,
-                            "description": "* المقاس المناسب للصورة هو 640×427 بكسل",
+                            "description": "* المقاس المناسب للصورة هو 640x427 بكسل",
                             "settings": {
                                 "height": 427,
                                 "width": 640
@@ -1093,7 +1135,7 @@
     ],
     "support_url": null,
     "description": {
-        "ar": "أقوى ثيم سلة 2025 – فخامة عربية × مبيعات صاروخية × فنلز تسويقية مدمجة",
-        "en": "The strongest Salla theme 2025 – Arabic luxury × rocket sales × integrated marketing funnels" 
+        "ar": "أقوى ثيم سلة 2025 - فخامة عربية x مبيعات صاروخية x فنلز تسويقية مدمجة",
+        "en": "The strongest Salla theme 2025 - Arabic luxury x rocket sales x integrated marketing funnels" 
     }
 }
