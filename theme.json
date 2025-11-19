@@ -1,0 +1,28 @@
+{
+  "name": "العبد",
+  "title": "العبد – أقوى ثيم سلة 2025",
+  "author": "Abdullah Selim",
+  "version": "1.0.0",
+  "type": "twilight",
+  "supports": [
+    "customizer",
+    "sections",
+    "presets",
+    "settings",
+    "header_footer",
+    "landing_pages"
+  ],
+  "preview": {
+    "thumbnail": "preview.jpg",
+    "screenshots": [
+      "screenshots/1.jpg",
+      "screenshots/2.jpg"
+    ]
+  },
+  "settings": "twilight.json",
+  "sections": "src/sections",
+  "layouts": {
+    "home": "src/views/home.twig",
+    "master": "src/views/layouts/master.twig"
+  }
+}
