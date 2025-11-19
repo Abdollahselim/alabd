@@ -3,8 +3,11 @@
         "ar": "العبد",
         "en": "AL-ABD"
     },
+    "title": "العبد – ثيم فخم متعدد الاستخدامات",
     "repository": "https://github.com/Abdollahselim/al-abd",
     "author_email": "selimdevs40@gmail.com",
+    "author": "Abdullah Selim",
+    "version": "1.0.0",
     "features": [
         "mega-menu",
         "fonts",
@@ -25,6 +28,61 @@
         "filters"
     ],
     "settings": [
+        {
+            "type": "header",
+            "content": "الألوان والخطوط – إعدادات أساسية (العبد 2025)"
+      },
+        {
+            "type": "color",
+            "id": "primary_color",
+            "label": "اللون الأساسي (الأزرار، الروابط، العناوين المهمة)",
+            "default": "#2563eb"
+      },
+        {
+            "type": "color",
+            "id": "secondary_color",
+            "label": "اللون الثانوي (الهوفر، العناصر البارزة)",
+            "default": "#1d4ed8"
+      },
+        {
+            "type": "color",
+            "id": "background_color",
+            "label": "لون خلفية المتجر",
+            "default": "#ffffff"
+        },
+        {
+            "type": "color",
+            "id": "text_color",
+            "label": "لون النصوص الأساسية",
+            "default": "#1f2937"
+        },
+        {
+            "type": "color",
+            "id": "heading_color",
+            "label": "لون العناوين (h1, h2, h3...)",
+            "default": "#111827"
+        },
+        {
+            "type": "font",
+            "id": "heading_font",
+            "label": "خط العناوين",
+            "default": "Cairo"
+        },
+        {
+            "type": "font",
+            "id": "body_font",
+            "label": "خط النصوص العادية",
+            "default": "Tajawal"
+        },
+        {
+            "type": "paragraph",
+            "content": "التغييرات هتظهر فورًا في كل المتجر واللاندينج بيجز"
+        },
+        {
+            "type": "static",
+            "format": "line"
+        },  
+        
         {
             "id": "squar_photo_bg_image_size",
             "type": "items",
@@ -1035,7 +1093,7 @@
     ],
     "support_url": null,
     "description": {
-        "ar": "",
-        "en": ""
+        "ar": "أقوى ثيم سلة 2025 – فخامة عربية × مبيعات صاروخية × فنلز تسويقية مدمجة",
+        "en": "The strongest Salla theme 2025 – Arabic luxury × rocket sales × integrated marketing funnels" 
     }
 }

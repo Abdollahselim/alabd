@@ -53,43 +53,86 @@
 <html lang="{{ user.language.code }}" dir="{{ user.language.dir }}">
 <!-- بسم الله الرحمن الرحيم -->
 <head>
-    <meta charset="UTF-8">
+    {{ hook('head') }}
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {{ theme.settings.set('placeholder', 'images/placeholder.png') }}
 
     {% include 'pages.partials.loading-screen-assets' %}
 
+    <!-- جلب إعدادات الثيم اللي عملناها في twilight.json -->
+    {% set primary       = theme.settings.get('primary_color')       ?? '#2563eb' %}
+    {% set secondary     = theme.settings.get('secondary_color')     ?? '#1d4ed8' %}
+    {% set bg            = theme.settings.get('background_color')    ?? '#ffffff' %}
+    {% set text          = theme.settings.get('text_color')          ?? '#1f2937' %}
+    {% set heading       = theme.settings.get('heading_color')       ?? '#111827' %}
+    {% set heading_font  = theme.settings.get('heading_font')        ?? 'Cairo' %}
+    {% set body_font     = theme.settings.get('body_font')           ?? 'Tajawal' %}
+
+    <!-- CSS Variables + الخطوط + الألوان الأساسية -->
+    <style>
+        :root {
+            --primary:       {{ primary }};
+            --secondary:     {{ secondary }};
+            --bg:            {{ bg }};
+            --text:          {{ text }};
+            --heading:       {{ heading }};
+            --heading-font:  "{{ heading_font }}", sans-serif;
+            --body-font:     "{{ body_font }}", sans-serif;
+        }
+
+        /* تطبيق الألوان والخطوط على كل المتجر */
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--body-font);
+        }
+        h1,h2,h3,h4,h5,h6,.heading {
+            color: var(--heading);
+            font-family: var(--heading-font);
+        }
+        a, button, .btn, .salla-button {
+            background: var(--primary) !important;
+            color: #ffffff !important;
+            transition: all 0.3s ease;
+        }
+        a:hover, button:hover, .btn:hover {
+            background: var(--secondary) !important;
+        }
+
+        /* لاندينج بيج ولون النصوص في الخلفية الداكنة */
+        .landing-hero { background: var(--primary); }
+        .landing-hero * { color: white !important; }
+    </style>
+
+    <!-- تحميل الخطوط من Google Fonts تلقائي -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family={{ heading_font|replace({' ': '+'}) }}:wght@400;500;600;700;800&family={{ body_font|replace({' ': '+'}) }}:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- ملفات الستايل الأساسية -->
+    <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
+    <link rel="stylesheet" href="{{ theme.font.path|cdn }}"/>
+    <link rel="stylesheet" href="{{ 'fonts/sallaicons.css'|cdn }}"/>
+
+    {{ hook('styles') }}
+    {% block styles %}{% endblock %}
+
+    <!-- السكربتات الأساسية -->
     <script defer data-cfasync="false" src="{{ 'product-card.js'|asset }}"></script>
     <script defer src="{{ 'main-menu.js'|asset }}"></script>
 
     {% block head_scripts %}{% endblock %}
 
-
     <script data-cfasync="false">
-        window.header_is_sticky = "{{theme.settings.get('header_is_sticky', 'Default Value')}}"
-        window.imageZoom = "{{theme.settings.get('imageZoom')}}"
-        window.can_access_wallet = {{ user.can_access_wallet | json_encode }}
+        window.header_is_sticky = "{{ theme.settings.get('header_is_sticky', 'Default Value') }}";
+        window.imageZoom        = "{{ theme.settings.get('imageZoom') }}";
+        window.can_access_wallet = {{ user.can_access_wallet | json_encode }};
     </script>
-    
-    {% hook 'head:start' %}
-    {% hook head %}
-    {% block styles %}{% endblock %}
-    <link rel="stylesheet" href="{{ 'app.css' | asset }}">
-    <link rel="stylesheet" href="{{ theme.font.path|cdn }}"/>
-    <link rel="stylesheet" href="{{ 'fonts/sallaicons.css'|cdn }}"/>
-    
-    <style>
-        :root {
-            --font-main: '{{theme.font.name}}';
-            --color-primary: {{ theme.color.primary }};
-            --color-primary-dark: {{ theme.color.darker(0.15) }};
-            --color-primary-light: {{ theme.color.lighter(0.15) }};
-            --color-primary-reverse: {{ theme.color.reverse_text }};
-        }
-    </style>
-    {# tracking services, custom css feature. #}
-    {% hook 'head:end' %}
+
+    {{ hook('head:start') }}
+    {{ hook('head') }}
+    {{ hook('head:end') }}
 </head>
 <body id="app" class="overflow-x-hidden {% hook 'body:classes' %}
   {{ theme.settings.get('footer_is_dark') ? ' footer-is-dark' : ' footer-is-light' }}
