@@ -1,0 +1,45 @@
+/* متغيرات الألوان الديناميكية من إعدادات الثيم */
+:root {
+  --primary-color: {{ settings.primary_color | default('#007bff') }};
+  --light-bg: {{ settings.light_bg | default('#ffffff') }};
+  --light-text: {{ settings.light_text | default('#333333') }};
+  --dark-bg: {{ settings.dark_bg | default('#121212') }};
+  --dark-text: {{ settings.dark_text | default('#ffffff') }};
+}
+
+/* الوضع الفاتح (افتراضي) */
+body {
+  background-color: var(--light-bg);
+  color: var(--light-text);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* الوضع الليلي */
+body.dark-mode {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+/* الألوان الأساسية زي الأزرار واللينكات */
+a, .btn-primary, .accent {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+.btn-primary {
+  background-color: var(--primary-color);
+}
+
+/* تطبيق على العناصر الرئيسية */
+header, footer, .card, .product-card, .section-bg {
+  background-color: var(--light-bg);
+  color: var(--light-text);
+  transition: all 0.4s ease;
+}
+body.dark-mode header,
+body.dark-mode footer,
+body.dark-mode .card,
+body.dark-mode .product-card,
+body.dark-mode .section-bg {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}

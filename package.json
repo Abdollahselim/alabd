@@ -1,11 +1,11 @@
 {
-  "name": "theme-raed",
-  "version": "1.0.3",
+  "name": "theme-alabd",
+  "version": "1.0.0",
   "description": "Salla Theme",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SallaApp/theme-raed.git"
+    "url": "git+https://github.com/Abdollahselim/alabd.git"
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",

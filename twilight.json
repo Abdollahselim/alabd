@@ -3,9 +3,15 @@
         "ar": "العبد",
         "en": "AL-ABD"
     },
-    "repository": "https://github.com/Abdollahselim/al-abd",
+    "repository": "https://github.com/Abdollahselim/alabd",
     "author_email": "selimdevs40@gmail.com",
     "features": [
+        "custom_colors",
+  "dark_mode",
+  "mobile_first",
+  "cart_drawer",
+  "advanced_filters",
+  "landing_sections",
         "mega-menu",
         "fonts",
         "color",
@@ -25,6 +31,74 @@
         "filters"
     ],
     "settings": [
+        {
+    "type": "header",
+    "content": "إعدادات الألوان والوضع الليلي"
+  },
+  {
+    "type": "color",
+    "id": "primary_color",
+    "label": "اللون الأساسي (Accent Color)",
+    "default": "#007bff"
+  },
+  {
+    "type": "color",
+    "id": "light_bg",
+    "label": "خلفية الوضع الفاتح",
+    "default": "#ffffff"
+  },
+  {
+    "type": "color",
+    "id": "light_text",
+    "label": "لون النص في الوضع الفاتح",
+    "default": "#333333"
+  },
+  {
+    "type": "color",
+    "id": "dark_bg",
+    "label": "خلفية الوضع الليلي",
+    "default": "#121212"
+  },
+  {
+    "type": "color",
+    "id": "dark_text",
+    "label": "لون النص في الوضع الليلي",
+    "default": "#ffffff"
+  },
+  {
+    "type": "checkbox",
+    "id": "enable_dark_mode",
+    "label": "تفعيل خاصية الوضع الليلي للعميل",
+    "default": true
+  },
+  {
+    "type": "checkbox",
+    "id": "dark_mode_default",
+    "label": "جعل الوضع الليلي افتراضي",
+    "default": false
+  },
+  {
+    "type": "checkbox",
+    "id": "follow_system_theme",
+    "label": "اتباع إعدادات الجهاز (prefers-color-scheme)",
+    "default": true
+  },
+  {
+    "type": "header",
+    "content": "إعدادات عامة"
+  },
+  {
+    "type": "checkbox",
+    "id": "sticky_header",
+    "label": "تثبيت الهيدر أثناء التمرير",
+    "default": true
+  },
+  {
+    "type": "checkbox",
+    "id": "show_cart_drawer",
+    "label": "تفعيل سلة الشراء الجانبية (Drawer)",
+    "default": true
+  },
         {
             "id": "squar_photo_bg_image_size",
             "type": "items",

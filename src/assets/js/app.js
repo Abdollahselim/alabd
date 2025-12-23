@@ -302,3 +302,43 @@ isElementLoaded(selector){
 }
 
 salla.onReady(() => (new App).loadTheApp());
+
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.getElementById('theme-toggle');
+  if (!toggle) return;
+
+  const body = document.body;
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const defaultDark = {{ settings.dark_mode_default | json_encode }};
+  const followSystem = {{ settings.follow_system_theme | json_encode }};
+
+  // تحديد الوضع الابتدائي
+  if (localStorage.getItem('theme') === 'dark' || 
+      (followSystem && prefersDark) || 
+      (!localStorage.getItem('theme') && defaultDark)) {
+    body.classList.add('dark-mode');
+  }
+
+  // التبديل عند الضغط
+  toggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    if (body.classList.contains('dark-mode')) {
+      localStorage.setItem('theme', 'dark');
+    } else {
+      localStorage.setItem('theme', 'light');
+    }
+  });
+
+  // اتباع تغيير إعدادات الجهاز
+  if (followSystem) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      if (!localStorage.getItem('theme')) {
+        if (e.matches) {
+          body.classList.add('dark-mode');
+        } else {
+          body.classList.remove('dark-mode');
+        }
+      }
+    });
+  }
+});
